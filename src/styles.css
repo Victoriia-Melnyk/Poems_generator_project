@@ -79,3 +79,7 @@ footer {
 	font-size: 13px;
 	margin-top: 30px;
 }
+
+#poem p {
+	margin: 0;
+}
