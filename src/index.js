@@ -1,6 +1,11 @@
 const form = document.getElementById('poem-form');
+const poemElement = document.getElementById('poem');
+const generationText = document.getElementById('generation-text');
 
 const displayPoem = response => {
+	generationText.classList.add('hidden');
+	poemElement.classList.remove('hidden');
+
 	new Typewriter('#poem', {
 		strings: `${response.data.answer}`,
 		autoStart: true,
@@ -18,6 +23,9 @@ function generatePoem(event) {
 	const context =
 		'You are a creative poet who writes beautiful and imaginative poems. Your poems are short, up to 6 lines long. Make sure the poem corresponds to the given theme. Each line is an HTML paragraph.';
 	const API_URL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${API_KEY}`;
+
+	poemElement.classList.add('hidden');
+	generationText.classList.remove('hidden');
 	axios.get(API_URL).then(displayPoem);
 }
 

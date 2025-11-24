@@ -15,19 +15,27 @@
 			<h1>Welcome to AI Poem Generator</h1>
 			<header></header>
 			<main>
-				<form id="poem-form">
-					<input
-						type="text"
-						class="instruction"
-						id="theme-input"
-						placeholder="Enter a theme for your poem"
-						autofocus
-						required
-						autocomplete="off"
-					/>
-					<button type="submit">Submit</button>
-				</form>
-				<div class="poem-output" id="poem"></div>
+				<div class="form-container">
+					<form id="poem-form">
+						<input
+							type="text"
+							class="instruction"
+							id="theme-input"
+							placeholder="Enter a topic for your poem"
+							autofocus
+							required
+							autocomplete="off"
+						/>
+						<button type="submit">Submit</button>
+					</form>
+					<small>I.e.: Flower, Love, Nature...</small>
+				</div>
+
+				<div class="poem-output hidden" id="poem"></div>
+				<div class="generation-text hidden" id="generation-text">
+					<p style="text-align: center">Generating your poem ...⏳</p>
+					<img src="./src/images/robot.gif" />
+				</div>
 			</main>
 			<footer>
 				This AI project is coded by
